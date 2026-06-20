@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    // this class picks the appropriate process for the selected operator
+    // This class picks the appropriate process for the selected operator.
     static class OperationStrategy
     {
         public static double SelectOperation(double firstNum, double secondNum, string choice)

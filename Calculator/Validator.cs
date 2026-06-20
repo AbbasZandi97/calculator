@@ -2,7 +2,7 @@
 
 namespace Calculator
 {
-    // this class validates the inputs and operator
+    // This class validates the inputs and operator(choice).
     internal class Validator
     {
         

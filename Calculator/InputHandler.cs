@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    // this class only gets the inputs as raw strings
+    // This class manages the process of getting inputs and operator.
     static class InputHandler
     {
 

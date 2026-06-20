@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    // this class handles the main flow of program
+    // This class handles the main flow of program.
 
     internal class Program
     {

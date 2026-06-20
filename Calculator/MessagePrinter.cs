@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Calculator
 {
+    // This class is responsible for all printing messages within the whole code.
     internal class MessagePrinter
     {
 

@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    // this class does the math and returns the output
+    // This class does the math and returns the output.
 
     static class Calculator
     {
