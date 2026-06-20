@@ -1,31 +1,73 @@
 ﻿namespace Calculator
 {
     // this class only gets the inputs as raw strings
-    internal class InputHandler
+    static class InputHandler
     {
-        public string FirstInput { get; private set; }
-        public string SecondInput { get; private set; }
-        public string Operator { get; private set; }
 
-
-        public void ReadInputs()
+        public static double GetValidInput(string kind)
         {
-            Console.WriteLine("Enter 1st input: ");
-            FirstInput = Console.ReadLine();
 
-            Console.WriteLine("Enter 2nd input: ");
-            SecondInput = Console.ReadLine();
+            if (kind.Equals("first") || kind.Equals("First"))
+            {
+
+                MessagePrinter.PrintEnterFirstInput();
+
+            }
+            else if (kind.Equals("second") || kind.Equals("Second")) 
+            {
+
+                MessagePrinter.PrintEnterSecondInput();
+            }
+            else
+            {
+                throw new ArgumentException("Arguman for GetValidInput is not valid");
+            }
+
+            return ValidateInput();
         }
 
-        private void ReadOperator()
+
+        public static double ValidateInput()
         {
-            Console.WriteLine("Choose the operator:");
-            Console.WriteLine("[A]dd the values.");
-            Console.WriteLine("[S]ubtract the values.");
-            Console.WriteLine("[M]ultiply the values.");
-            Console.WriteLine("[D]ivide the values.");
-            Operator = Console.ReadLine();
+            string input;
+            
+            while (true)
+            {
+                input = Console.ReadLine();
+                if (Validator.IsInputValid(input))
+                    break;
+                MessagePrinter.PrintInvalidInput();
+            }
+
+            return double.Parse(input);
         }
+
+
+
+
+        public static string GetValidChoice()
+        {
+            string choice;
+            MessagePrinter.PrintEnterChoice();
+
+            while (true)
+            {
+                choice = Console.ReadLine();
+                
+                if (Validator.IsChoiceValid(choice))
+                {
+                    break;
+                }
+
+                MessagePrinter.PrintInvalidChoice();
+            }
+
+            return choice;
+        }
+
+
+
+
 
     }
 }

@@ -6,7 +6,7 @@ namespace Calculator
     internal class Validator
     {
         
-        public bool IsInputValid(string input)
+        public static bool IsInputValid(string input)
         {
             if (double.TryParse(input, out _))
                 return true;
@@ -15,14 +15,18 @@ namespace Calculator
         }
 
 
-        public bool IsOperatorValid(string op)
+        public static bool IsChoiceValid(string op)
         {
             switch(op)
             {
-                case "+":
-                case "-":
-                case "*":
-                case "/":
+                case "A":
+                case "a":
+                case "S":
+                case "s":
+                case "M":
+                case "m":
+                case "D":
+                case "d":
                     return true;
                 default:
                     return false;
